@@ -1,0 +1,1 @@
+//if(irandom(100) < global.lvl1_key_drop_chance and global.PlayerInventory)
