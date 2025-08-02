@@ -1,9 +1,9 @@
 
 randomize();
 
-global.floor_level = 1;
+global.floor_level = 2;
 
-room_goto(Room1);
+room_goto(Room2);
 
 instance_create_layer(640, 1150, "Player", oPlayer);
 window_set_fullscreen(1);

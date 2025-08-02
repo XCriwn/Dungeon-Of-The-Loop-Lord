@@ -15,7 +15,7 @@ tiles_y = room_height_px div tile_size;
 
 
 if(global.floor_level == 1) {createLevelOne(); setWall(); setKeyHole(); setDoor(); createEnemies("goblin", 10);}
-else if(global.floor_level == 2) {}
+else if(global.floor_level == 2) {createLevelTwo(); setWall(); setKeyHole(); setDoor();}
 else if(global.floor_level == 3) {}
 
 
@@ -30,6 +30,17 @@ function randomiseTile(){
 	return 3;
 	
 }
+
+function randomiseTilelvl2(){
+	//returns 4,5,6
+	//1 is the base
+	random_var = irandom_range(1,10)
+	if (random_var <= 5) {return 4;}
+	if (random_var <= 8) {return 5;}
+	return 6;
+	
+}
+
 
 function createLevelOne(){
 	// MAX WIDTH/HEIGHT IS 39; 39 FILLS ENTIRE BOARD WITH TILES
@@ -48,6 +59,41 @@ function createLevelOne(){
 	}
 }
 
+
+function createLevelTwo(){
+	global.tile_array = array_create(tiles_x);
+
+	for (var i = 0; i < tiles_x; i++) {
+	    global.tile_array[i] = array_create(tiles_y);
+	    for (var j = 0; j < tiles_y; j++) {
+	        global.tile_array[i][j] = 0;
+
+	        // Increased corridor dimensions
+	        var corridor_width = 9;
+	        var corridor_height = 7;
+
+	        // Vertical left corridor
+	        var inLeftVertical = (i >= 2 && i < 2 + corridor_width) && (j >= 2 && j <= 35);
+
+	        // Central horizontal corridor
+	        var inHorizontalMiddle = (j >= 10 && j < 10 + corridor_height) && (i >= 2 && i <= 35);
+
+	        // Central vertical corridor (connects horizontal corridors)
+	        var inCenterVertical = (i >= 18 && i < 18 + corridor_width) && (j >= 5 && j <= 30);
+
+	        // Top horizontal branch
+	        var inTopBranch = (j >= 5 && j < 5 + corridor_height) && (i >= 18 && i <= 35);
+
+	        // Bottom horizontal branch
+	        var inBottomBranch = (j >= 15 && j < 15 + corridor_height) && (i >= 18 && i <= 35);
+
+	        if (inLeftVertical || inHorizontalMiddle || inCenterVertical || inTopBranch || inBottomBranch) {
+	            global.tile_array[i][j] = randomiseTilelvl2();
+	        }
+	    }
+	}
+}
+	
 function createEllipse(i,j,radius){
 
     var center_x = tiles_x div 2;
@@ -231,7 +277,27 @@ for (var i = 0; i < tiles_x; i++) {
 				image_index = 0;
 			};   // keyhole 1
 			break;  
+			case -6: 
+			var tile_1 = instance_create_layer(xx,yy,"Tiles", o2WallTile);
+			with tile_1{
+				image_index = 0;
+			};   // wall floor 2
+			break;  
 			
+			case -5: 
+			var tile_1 = instance_create_layer(xx,yy,"Tiles", o2WallTile);
+			with tile_1{
+				image_index = 1;
+			};   // wall floor 2
+			break;   
+			
+			case -4: 
+			var tile_1 = instance_create_layer(xx,yy,"Tiles", o2WallTile);
+			with tile_1{
+				image_index = 2;
+			};   //wall floor 2
+			break;   
+
 			case -3: 
 			var tile_1 = instance_create_layer(xx,yy,"Tiles", oWallTile);
 			with tile_1{
@@ -280,6 +346,27 @@ for (var i = 0; i < tiles_x; i++) {
 				image_index = 3;
 			};   // floor 1
 			break;
+			  case 4:  
+			var tile_1 = instance_create_layer(xx,yy,"Tiles", o2FloorTile);
+			with tile_1{
+				image_index = 1;
+			};   // floor 2
+			break;
+			
+            case 5: 
+			var tile_1 = instance_create_layer(xx,yy,"Tiles", o2FloorTile);
+			with tile_1{
+				image_index = 2;
+			};   // floor 2
+			break;
+			
+			case 6:
+			var tile_1 = instance_create_layer(xx,yy,"Tiles", o2FloorTile);
+			with tile_1{
+				image_index = 3;
+			};   // floor 2
+			break;
+
 			
             default:  break;   // unknown
 			

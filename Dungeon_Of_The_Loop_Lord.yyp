@@ -40,6 +40,8 @@
   },
   "name":"Dungeon_Of_The_Loop_Lord",
   "resources":[
+    {"id":{"name":"o2FloorTile","path":"objects/o2FloorTile/o2FloorTile.yy",},},
+    {"id":{"name":"o2WallTile","path":"objects/o2WallTile/o2WallTile.yy",},},
     {"id":{"name":"oBullet","path":"objects/oBullet/oBullet.yy",},},
     {"id":{"name":"oDoor","path":"objects/oDoor/oDoor.yy",},},
     {"id":{"name":"oEnemyGoblin","path":"objects/oEnemyGoblin/oEnemyGoblin.yy",},},
@@ -59,6 +61,8 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"id":{"name":"sndHihihiha","path":"sounds/sndHihihiha/sndHihihiha.yy",},},
+    {"id":{"name":"s2FloorTile","path":"sprites/s2FloorTile/s2FloorTile.yy",},},
+    {"id":{"name":"S2WallTile","path":"sprites/S2WallTile/S2WallTile.yy",},},
     {"id":{"name":"sBullet","path":"sprites/sBullet/sBullet.yy",},},
     {"id":{"name":"sDoor","path":"sprites/sDoor/sDoor.yy",},},
     {"id":{"name":"sEnemyGoblinDeath","path":"sprites/sEnemyGoblinDeath/sEnemyGoblinDeath.yy",},},
