@@ -10,7 +10,7 @@ tiles_x = room_width_px div tile_size;
 tiles_y = room_height_px div tile_size;
 
 
-if(global.floor_level == 1) {createLevelOne(); setWall(); createEnemies("goblin", 50);}
+if(global.floor_level == 1) {createLevelOne(); setWall(); createEnemies("goblin", 10);}
 else if(global.floor_level == 2) {}
 else if(global.floor_level == 3) {}
 
@@ -74,7 +74,6 @@ function setWall(){
 			}
 		}
 	}
-
 }
 
 function createEnemies(instance, numberOfEnemies){
@@ -110,6 +109,17 @@ function createEnemies(instance, numberOfEnemies){
 					if (!valid) break;
 				}
 			}
+			
+			// If tile is valid, check distance to player
+			if (valid) {
+				var tileX = col * tile_size;
+				var tileY = row * tile_size;
+
+				var dist_to_player = point_distance(tileX, tileY, oPlayer.x, oPlayer.y);
+				if (dist_to_player < 300) {
+					valid = false; // too close
+				}
+			}
 
 			if (valid) break;
 		}
@@ -126,40 +136,6 @@ function createEnemies(instance, numberOfEnemies){
 		}
 	}
 }
-
-
-
-//function createEnemies(instance, numberOfEnemies){
-
-//	for(var i=0; i<numberOfEnemies; i++){
-//		var randomTile = -999;
-//		var chosenTile = 0;
-		
-//		var maxTileColumn = array_length(global.tile_array[0]);
-//		var maxTileLine = array_length(global.tile_array);
-//		//show_debug_message("column = " + string(maxTileColumn) + " , line= " + string(maxTileLine));
-		
-//		do{
-//			randomTileColumn = irandom(array_length(global.tile_array[0])-1); //global.tile_array[0][0]
-//			randomTileLine = irandom(array_length(global.tile_array)-1);
-//			show_debug_message("column = " + string(randomTileColumn) + " , line= " + string(randomTileLine));
-			
-//		}
-//		until(global.tile_array[randomTileLine][randomTileColumn] >= 1)
-		
-//		var tileX = randomTileColumn*32;
-//		var tileY = randomTileLine*32; //TODO
-		
-	
-//		switch(instance){
-		
-//		case "goblin": instance_create_layer(tileX, tileY, "Enemies", oEnemyGoblin);
-		
-//		}
-	
-//	}
-
-//}
 
 function setInstances(){
 

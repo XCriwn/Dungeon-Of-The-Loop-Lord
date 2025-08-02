@@ -35,7 +35,7 @@ if (dist <= range) {
 }
 
 // ====== MOVEMENT ======
-if (!shooting && dist <= 300 && dist > range && can_move) {
+if (!shooting && dist <= detect_range && dist > range && can_move) {
     var move_x = lengthdir_x(1, angle);
     var move_y = lengthdir_y(1, angle);
 

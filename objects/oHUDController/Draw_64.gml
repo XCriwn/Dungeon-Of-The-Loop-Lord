@@ -2,7 +2,11 @@
 draw_set_color(c_red);
 //draw_rectangle(20,20,180,50, 0)//(20, 20, "HP: " + string(global.PlayerHP));
 
+
+
+draw_rectangle(48,30,(global.PlayerHP /100) * 127 + 48,41, 0)//max: 127 px
 draw_sprite(sHealthbar, image_index, 20,20)
+
 //COMMENT
 
 // ==== Draw Inventory ====

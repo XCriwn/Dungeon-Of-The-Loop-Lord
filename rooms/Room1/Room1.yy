@@ -24,8 +24,8 @@
   ],
   "name":"Room1",
   "parent":{
-    "name":"Dungeon_Of_The_Loop_Lord",
-    "path":"Dungeon_Of_The_Loop_Lord.yyp",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

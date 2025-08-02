@@ -1,5 +1,7 @@
 /// @description Movement and keyboard inputs for it
 
+if(global.PlayerHP <= 0) {room_goto(GameOver); instance_destroy()}
+
 right_key = keyboard_check(vk_right) or keyboard_check(ord("D"));
 left_key = keyboard_check(vk_left) or keyboard_check(ord("A"));
 up_key = keyboard_check(vk_up) or keyboard_check(ord("W"));
