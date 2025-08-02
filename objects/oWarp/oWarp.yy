@@ -1,9 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"oWall",
-  "eventList":[],
+  "%Name":"oWarp",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"oWall",
+  "name":"oWarp",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sWall",
-    "path":"sprites/sWall/sWall.yy",
+    "name":"sWarp",
+    "path":"sprites/sWarp/sWarp.yy",
   },
   "spriteMaskId":null,
   "visible":false,

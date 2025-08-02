@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"sHihihiha",
+  "%Name":"sndHihihiha",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,7 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":1.5934694,
-  "name":"sHihihiha",
+  "name":"sndHihihiha",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sHihihiha.mp3",
+  "soundFile":"sndHihihiha.mp3",
   "type":0,
   "volume":0.3,
 }
