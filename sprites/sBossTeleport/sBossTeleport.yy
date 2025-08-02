@@ -79,7 +79,7 @@
     },
     "name":"sBossTeleport",
     "playback":1,
-    "playbackSpeed":4.0,
+    "playbackSpeed":15.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
