@@ -1,3 +1,7 @@
+step_countdown = 600;
+max_step_countdown = 600;
+
+
 // Room dimensions (in pixels)
 room_width_px = room_width;
 room_height_px = room_height;
@@ -10,7 +14,7 @@ tiles_x = room_width_px div tile_size;
 tiles_y = room_height_px div tile_size;
 
 
-if(global.floor_level == 1) {createLevelOne(); setWall(); createEnemies("goblin", 10);}
+if(global.floor_level == 1) {createLevelOne(); setWall(); setKeyHole(); createEnemies("goblin", 10);}
 else if(global.floor_level == 2) {}
 else if(global.floor_level == 3) {}
 
@@ -75,6 +79,35 @@ function setWall(){
 		}
 	}
 }
+
+function setKeyHole() {
+	var candidates = [];
+
+	// Gather all valid wall positions into an array
+	for (var i = 1; i < tiles_x - 1; i++) {
+		for (var j = 1; j < tiles_y - 1; j++) {
+			var invalid = 0;
+			if(global.tile_array[i][j-1]<0 and global.tile_array[i-1][j]<0) invalid++;
+			if(global.tile_array[i][j+1]<0 and global.tile_array[i-1][j]<0) invalid++;
+			if(global.tile_array[i][j-1]<0 and global.tile_array[i+1][j]<0) invalid++;
+			if(global.tile_array[i][j+1]<0 and global.tile_array[i+1][j]<0) invalid++;
+			
+			if (global.tile_array[i][j] < 0 and invalid == 0) {
+				array_push(candidates, [i, j]); // Store coordinates as a 2-element array
+			}
+		}
+	}
+
+	// If any walls exist, pick one at random
+	if (array_length(candidates) > 0) {
+		var chosen = candidates[irandom(array_length(candidates) - 1)];
+		var x_index = chosen[0];
+		var y_index = chosen[1];
+		
+		global.tile_array[x_index][y_index] = -999;
+	}
+}
+	
 
 function createEnemies(instance, numberOfEnemies){
 	var tile_width = array_length(global.tile_array);        // columns (X)
@@ -153,6 +186,13 @@ for (var i = 0; i < tiles_x; i++) {
         
         // Choose color based on tile type
         switch (tile) {
+			
+			case -999:
+			var tile_1 = instance_create_layer(xx,yy,"Tiles", oKeyHole);
+			with tile_1{
+				image_index = 0;
+			};   // keyhole 1
+			break;  
 			
 			case -3: 
 			var tile_1 = instance_create_layer(xx,yy,"Tiles", oWallTile);

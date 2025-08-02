@@ -18,3 +18,6 @@ draw_set_color(c_white);
 
 
 global.lvl1_key_drop_chance = 25;
+global.Secrets[0] = false;
+global.Secrets[1] = false;
+global.Secrets[2] = false;
