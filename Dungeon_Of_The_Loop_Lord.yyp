@@ -45,6 +45,7 @@
     {"id":{"name":"oBullet","path":"objects/oBullet/oBullet.yy",},},
     {"id":{"name":"oDoor","path":"objects/oDoor/oDoor.yy",},},
     {"id":{"name":"oEnemyGoblin","path":"objects/oEnemyGoblin/oEnemyGoblin.yy",},},
+    {"id":{"name":"oFinalBoss","path":"objects/oFinalBoss/oFinalBoss.yy",},},
     {"id":{"name":"oFloorTile","path":"objects/oFloorTile/oFloorTile.yy",},},
     {"id":{"name":"oFloorTileController","path":"objects/oFloorTileController/oFloorTileController.yy",},},
     {"id":{"name":"oGameOverController","path":"objects/oGameOverController/oGameOverController.yy",},},
