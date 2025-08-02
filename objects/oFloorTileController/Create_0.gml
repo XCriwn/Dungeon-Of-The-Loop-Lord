@@ -108,7 +108,7 @@ function setKeyHole() {
 	}
 }
 
-function setDoor(){
+function setDoor(){ //COMMENT
 
 	var candidates = [];
 
