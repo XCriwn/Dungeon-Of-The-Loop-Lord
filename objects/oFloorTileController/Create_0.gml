@@ -40,6 +40,15 @@ function randomiseTilelvl2(){
 	return 6;
 	
 }
+function randomiseTilelvl3(){
+	//returns 7,8,9
+	//1 is the base
+	random_var = irandom_range(1,10)
+	if (random_var <= 5) {return 7;}
+	if (random_var <= 8) {return 8;}
+	return 9;
+	
+}
 
 
 function createLevelOne(){
@@ -122,7 +131,8 @@ function setWall(){
 			global.tile_array[i-1][j+1] == 0 or global.tile_array[i-1][j-1] == 0)){
 				if(global.floor_level == 1)global.tile_array[i][j] = randomiseTile() * (-1); //NEGATIVE VALUES WILL BE WALLS
 				if(global.floor_level == 2)global.tile_array[i][j] = randomiseTilelvl2() * (-1);
-				//if(global.floor_level == 3)global.tile_array[i][j] = randomiseTilelvl2() * (-1);
+				if(global.floor_level == 3)global.tile_array[i][j] = randomiseTilelvl3() * (-1);
+				//if(global.floor_level == 4)global.tile_array[i][j] = randomiseTilelvl3() * (-1);
 			}
 		}
 	}
@@ -278,7 +288,27 @@ for (var i = 0; i < tiles_x; i++) {
 			with tile_1{
 				image_index = 0;
 			};   // keyhole 1
+			break;
+			case -9: 
+			var tile_2 = instance_create_layer(xx,yy,"Tiles", o3WallTile);
+			with tile_2{
+				image_index = 0;
+			};   // wall floor 3
 			break;  
+			
+			case -8: 
+			var tile_3 = instance_create_layer(xx,yy,"Tiles", o3WallTile);
+			with tile_3{
+				image_index = 1;
+			};   // wall floor 3
+			break;   
+			
+			case -7: 
+			var tile_4 = instance_create_layer(xx,yy,"Tiles", o3WallTile);
+			with tile_4{
+				image_index = 2;
+			};   //wall floor 3
+			break;   
 			case -6: 
 			var tile_2 = instance_create_layer(xx,yy,"Tiles", o2WallTile);
 			with tile_2{
@@ -368,6 +398,26 @@ for (var i = 0; i < tiles_x; i++) {
 			with tile_1{
 				image_index = 3;
 			};   // floor 2
+			break;
+				case 7:  
+			var tile_1 = instance_create_layer(xx,yy,"Tiles", o3FloorTile);
+			with tile_1{
+				image_index = 1;
+			};   // floor 3
+			break;
+			
+            case 8: 
+			var tile_1 = instance_create_layer(xx,yy,"Tiles", o3FloorTile);
+			with tile_1{
+				image_index = 2;
+			};   // floor 3
+			break;
+			
+			case 9:
+			var tile_1 = instance_create_layer(xx,yy,"Tiles", o3FloorTile);
+			with tile_1{
+				image_index = 3;
+			};   // floor 3
 			break;
 
 			
