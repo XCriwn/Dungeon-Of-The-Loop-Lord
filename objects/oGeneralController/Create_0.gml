@@ -5,7 +5,11 @@ global.floor_level = 2;
 
 room_goto(Room2);
 
-instance_create_layer(640, 1150, "Player", oPlayer);
+if(global.floor_level == 1) instance_create_layer(640, 1150, "Player", oPlayer);
+if(global.floor_level == 2) instance_create_layer(640, 1150, "Player", oPlayer);
+if(global.floor_level == 3) instance_create_layer(640, 1150, "Player", oPlayer);
+
+
 window_set_fullscreen(1);
 
 
