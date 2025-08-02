@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s3FloorSprite",
-    "path":"sprites/s3FloorSprite/s3FloorSprite.yy",
+    "name":"s3FloorSpriteV3",
+    "path":"sprites/s3FloorSpriteV3/s3FloorSpriteV3.yy",
   },
   "spriteMaskId":null,
   "visible":true,

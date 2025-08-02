@@ -17,6 +17,7 @@ tiles_y = room_height_px div tile_size;
 if(global.floor_level == 1) {createLevelOne(); setWall(); setKeyHole(); setDoor(); createEnemies("goblin", 10);}
 else if(global.floor_level == 2) {createLevelTwo(); setWall(); setKeyHole(); setDoor();}
 else if(global.floor_level == 3) {}
+else if(global.floor_level == 4) {createLevelFour(); setWall(); }
 
 
 setInstances()
@@ -103,6 +104,23 @@ function createLevelTwo(){
 	}
 }
 	
+function createLevelFour() {
+    // Create 2D tile array
+    global.tile_array = array_create(tiles_x);
+
+    for (var i = 0; i < tiles_x; i++) {
+        global.tile_array[i] = array_create(tiles_y);
+        for (var j = 0; j < tiles_y; j++) {
+            // Fill solid ellipse with path/wall tiles
+            if (createEllipse(i, j, 16)) {
+                global.tile_array[i][j] = randomiseTilelvl3(); // Fill with path or wall
+            } else {
+                global.tile_array[i][j] = 0; // Outside = void
+            }
+        }
+    }
+}
+	
 function createEllipse(i,j,radius){
 
     var center_x = tiles_x div 2;
@@ -132,7 +150,7 @@ function setWall(){
 				if(global.floor_level == 1)global.tile_array[i][j] = randomiseTile() * (-1); //NEGATIVE VALUES WILL BE WALLS
 				if(global.floor_level == 2)global.tile_array[i][j] = randomiseTilelvl2() * (-1);
 				if(global.floor_level == 3)global.tile_array[i][j] = randomiseTilelvl3() * (-1);
-				//if(global.floor_level == 4)global.tile_array[i][j] = randomiseTilelvl3() * (-1);
+				if(global.floor_level == 4)global.tile_array[i][j] = randomiseTilelvl3() * (-1);
 			}
 		}
 	}
