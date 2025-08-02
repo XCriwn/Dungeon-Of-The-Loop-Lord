@@ -26,8 +26,15 @@
 //}
 
 if place_meeting(x,y, oPlayer){
+	
+	if (global.floor_level == 1) {
+		room_goto(Room2);
+		}
+		
+	if(global.floor_level == 2) {
+		room_goto(room3);
+		}
 
-room_goto(Room2);
-global.floor_level = 2;
+	global.floor_level++;
 
 }
