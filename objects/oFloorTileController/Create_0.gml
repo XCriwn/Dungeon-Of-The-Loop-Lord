@@ -120,7 +120,9 @@ function setWall(){
 			global.tile_array[i+1][j] == 0 or global.tile_array[i-1][j] == 0 or
 			global.tile_array[i+1][j+1] == 0 or global.tile_array[i+1][j-1] == 0 or 
 			global.tile_array[i-1][j+1] == 0 or global.tile_array[i-1][j-1] == 0)){
-				global.tile_array[i][j] = randomiseTile() * (-1); //NEGATIVE VALUES WILL BE WALLS
+				if(global.floor_level == 1)global.tile_array[i][j] = randomiseTile() * (-1); //NEGATIVE VALUES WILL BE WALLS
+				if(global.floor_level == 2)global.tile_array[i][j] = randomiseTilelvl2() * (-1);
+				//if(global.floor_level == 3)global.tile_array[i][j] = randomiseTilelvl2() * (-1);
 			}
 		}
 	}
@@ -278,22 +280,22 @@ for (var i = 0; i < tiles_x; i++) {
 			};   // keyhole 1
 			break;  
 			case -6: 
-			var tile_1 = instance_create_layer(xx,yy,"Tiles", o2WallTile);
-			with tile_1{
+			var tile_2 = instance_create_layer(xx,yy,"Tiles", o2WallTile);
+			with tile_2{
 				image_index = 0;
 			};   // wall floor 2
 			break;  
 			
 			case -5: 
-			var tile_1 = instance_create_layer(xx,yy,"Tiles", o2WallTile);
-			with tile_1{
+			var tile_3 = instance_create_layer(xx,yy,"Tiles", o2WallTile);
+			with tile_3{
 				image_index = 1;
 			};   // wall floor 2
 			break;   
 			
 			case -4: 
-			var tile_1 = instance_create_layer(xx,yy,"Tiles", o2WallTile);
-			with tile_1{
+			var tile_4 = instance_create_layer(xx,yy,"Tiles", o2WallTile);
+			with tile_4{
 				image_index = 2;
 			};   //wall floor 2
 			break;   
@@ -346,7 +348,8 @@ for (var i = 0; i < tiles_x; i++) {
 				image_index = 3;
 			};   // floor 1
 			break;
-			  case 4:  
+			
+			case 4:  
 			var tile_1 = instance_create_layer(xx,yy,"Tiles", o2FloorTile);
 			with tile_1{
 				image_index = 1;
