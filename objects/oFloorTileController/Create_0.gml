@@ -450,4 +450,4 @@ for (var i = 0; i < tiles_x; i++) {
 
 }
 
-show_debug_message("tile_array: " + string(global.tile_array))
+//show_debug_message("tile_array: " + string(global.tile_array))
