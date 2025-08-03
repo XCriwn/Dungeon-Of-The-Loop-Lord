@@ -28,17 +28,25 @@
 if place_meeting(x,y, oPlayer){
 	
 	if (global.floor_level == 1) {
+		audio_play_sound(sndDoor, 1, false);
+		audio_sound_loop_start(sndDoor,1.13);
 		room_goto(Room2);
 		oPlayer.x = 640
 		oPlayer.y = 940
+		
 		}
 		
 	if(global.floor_level == 2) {
+		audio_play_sound(sndDoor, 1, false);
+		audio_sound_loop_start(sndDoor,1.13);
 		room_goto(Room3);
 		oPlayer.x = 600
 		oPlayer.y = 900
+		
 		}
 	if(global.floor_level == 3) {
+		audio_play_sound(sndDoor, 1, false);
+		audio_sound_loop_start(sndDoor,1.13);
 		room_goto(GameOver);
 		
 	}

@@ -34,7 +34,7 @@ function randomiseTile(){
 
 function randomiseTilelvl2(){
 	//returns 4,5,6
-	//1 is the base
+
 	random_var = irandom_range(1,10)
 	if (random_var <= 5) {return 4;}
 	if (random_var <= 8) {return 5;}
@@ -43,7 +43,7 @@ function randomiseTilelvl2(){
 }
 function randomiseTilelvl3(){
 	//returns 7,8,9
-	//1 is the base
+
 	random_var = irandom_range(1,10)
 	if (random_var <= 8) {return 7;}
 	if (random_var <= 9) {return 8;}
@@ -62,7 +62,7 @@ function randomiseTilelvl4(){
 
 
 function createLevelOne(){
-	// MAX WIDTH/HEIGHT IS 39; 39 FILLS ENTIRE BOARD WITH TILES
+
 
 	// Create 2D tile array
 	global.tile_array = array_create(tiles_x);
@@ -91,19 +91,11 @@ function createLevelTwo(){
 	        var corridor_width = 9;
 	        var corridor_height = 7;
 
-	        // Vertical left corridor
+
 	        var inLeftVertical = (i >= 2 && i < 2 + corridor_width) && (j >= 2 && j <= 35);
-
-	        // Central horizontal corridor
 	        var inHorizontalMiddle = (j >= 10 && j < 10 + corridor_height) && (i >= 2 && i <= 35);
-
-	        // Central vertical corridor 
 	        var inCenterVertical = (i >= 18 && i < 18 + corridor_width) && (j >= 5 && j <= 30);
-
-	        // Top horizontal branch
 	        var inTopBranch = (j >= 5 && j < 5 + corridor_height) && (i >= 18 && i <= 35);
-
-	        // Bottom horizontal branch
 	        var inBottomBranch = (j >= 15 && j < 15 + corridor_height) && (i >= 18 && i <= 35);
 
 	        if (inLeftVertical || inHorizontalMiddle || inCenterVertical || inTopBranch || inBottomBranch) {
@@ -121,18 +113,18 @@ function createLevelThree(){
 	    for (var j = 0; j < tiles_y; j++) {
 	        global.tile_array[i][j] = 0;
 
-	        // TALLER ROOM & CORRIDOR REGIONS
+	        // Rooms
 	        var inLeftRoom = (i >= 2 && i < 20) && (j >= 2 && j < 35);
 	        var inMiddleCorridor = (i >= 20 && i < 36) && (j >= 12 && j < 25);
 	        var inRightRoom = (i >= 36 && i < 52) && (j >= 2 && j < 35);
 
-	        // SHRUNKEN & CENTERED VOIDS
+	        // Void
 	        var inTopLeftVoid = (i >= 7 && i < 12) && (j >= 6 && j < 11);
 	        var inBottomLeftVoid = (i >= 7 && i < 12) && (j >= 26 && j < 31);
 	        var inMiddleVoid = (i >= 27 && i < 30) && (j >= 16 && j < 21);
 	        var inRightVoid = (i >= 42 && i < 46) && (j >= 13 && j < 24);
 
-	        // FINAL TILE DECISION
+	        
 	        var inPlayableArea = 
 	            (inLeftRoom || inMiddleCorridor || inRightRoom)
 	            && !(inTopLeftVoid || inBottomLeftVoid || inMiddleVoid || inRightVoid);
@@ -213,7 +205,7 @@ function setKeyHole() {
 			if(global.tile_array[i][j+1]<0 and global.tile_array[i+1][j]<0) invalid++;
 			
 			if (global.tile_array[i][j] < 0 and invalid == 0) {
-				array_push(candidates, [i, j]); // Store coordinates as a 2-element array
+				array_push(candidates, [i, j]); 
 			}
 		}
 	}
@@ -243,7 +235,7 @@ function setDoor(){ //COMMENT 2
 			if(global.tile_array[i][j] < -900) invalid++;
 			
 			if (global.tile_array[i][j] < 0 and invalid == 0) {
-				array_push(candidates, [i, j]); // Store coordinates as a 2-element array
+				array_push(candidates, [i, j]); 
 			}
 		}
 	}
@@ -282,7 +274,7 @@ function createEnemies(instance, numberOfEnemies){
 				// Check surrounding 8 tiles
 				for (var dx = -1; dx <= 1; dx++) {
 					for (var dy = -1; dy <= 1; dy++) {
-						if (dx == 0 && dy == 0) continue; // skip center tile
+						if (dx == 0 && dy == 0) continue; 
 
 						var neighbor = global.tile_array[col + dx][row + dy];
 						if (neighbor <= 0) { // wall or void

@@ -10,7 +10,7 @@ if(global.floor_level == 1){
 	if(isKey == true) {
 		global.Secrets[0] = true; 
 		instance_destroy(other); 
-		audio_play_sound(sndHihihiha, 1, false);
+		audio_play_sound(sndLock, 1, false);
 	
 		for(var i =0; i < array_length(global.PlayerInventory); i++){
 			if(global.PlayerInventory[i] == sKey) global.PlayerInventory[i] = undefined;
@@ -20,14 +20,14 @@ if(global.floor_level == 1){
 else if(global.floor_level == 2){
 
 	global.Secrets[1] = true;
-	audio_play_sound(sndHihihiha, 1, false);
+	audio_play_sound(sndLock, 1, false);
 	instance_destroy(other); 
 
 }
 else if(global.floor_level == 3){
 
 	global.Secrets[2] = true;
-	audio_play_sound(sndHihihiha, 1, false);
+	audio_play_sound(sndLock, 1, false);
 	instance_destroy(other); 
 
 }

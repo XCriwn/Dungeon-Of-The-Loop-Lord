@@ -61,7 +61,7 @@ if (player_proximity >= 0 && !shooting) {
         case 3: sprite_index = Elvl3atckF; break;
     }
     
-    image_speed = 1; // Optional: control animation speed
+    image_speed = 1; 
     image_index = 0;
 }
 
@@ -74,7 +74,7 @@ if (shooting) {
         attack_done = true;
     }
 
-    // End attack after, say, 20 frames
+  
     if (attack_timer >= 25) {
         shooting = false;
         can_move = true;

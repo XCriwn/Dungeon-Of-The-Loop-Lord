@@ -61,12 +61,12 @@ if (player_proximity >= 0 && !shooting) {
         case 3: sprite_index = sEnemyGoblinPunchDown; break;
     }
     
-    image_speed = 1; // Optional: control animation speed
+    image_speed = 1; 
     image_index = 0;
 }
 
 if (shooting) {
-    // Damage player at frame 3
+   
     if (image_index >= 3 && image_index < 3.5 && dist <= range) {
         global.PlayerHP -= damage;
     }
