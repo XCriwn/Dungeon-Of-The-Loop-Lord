@@ -15,7 +15,7 @@ tiles_y = room_height_px div tile_size;
 
 
 if(global.floor_level == 1) {createLevelOne(); setWall(); setKeyHole(); setDoor(); createEnemies("goblin", 10);}
-else if(global.floor_level == 2) {createLevelTwo(); setWall(); setKeyHole(); setDoor();}
+else if(global.floor_level == 2) {createLevelTwo(); setWall(); setKeyHole(); setDoor();createEnemies("Ghost", 10);}
 else if(global.floor_level == 3) {createLevelThree(); setWall(); setKeyHole(); setDoor();createEnemies("Pawn", 10);}
 else if(global.floor_level == 4) {createLevelFour(); setWall(); }
 
@@ -309,6 +309,9 @@ function createEnemies(instance, numberOfEnemies){
 					break;
 				case "Pawn":
 					instance_create_layer(tileX, tileY, "Enemies", oEnemyLvl3);
+					break;
+					case "Ghost":
+					instance_create_layer(tileX, tileY, "Enemies", oEnemyGhost);
 					break;
 			}
 		}
