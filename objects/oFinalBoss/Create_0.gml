@@ -1,6 +1,6 @@
-HP = 50;
+HP = 500;
 
-damage = 10;
+damage = 19;
 
 shooting = false;
 
@@ -12,6 +12,6 @@ dist = 999;
 
 angle = 0;
 
-range = 30;
+range = 90;
 
-detect_range = 300;
+detect_range = 600;

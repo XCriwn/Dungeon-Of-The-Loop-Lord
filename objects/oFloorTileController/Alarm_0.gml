@@ -1,0 +1,1 @@
+instance_create_layer(600,600,"Enemies", oFinalBoss)
