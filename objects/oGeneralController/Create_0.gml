@@ -1,13 +1,13 @@
 
 randomize();
 
-global.floor_level = 1;
+global.floor_level = 3;
 
-room_goto(Room1);
+room_goto(Room3);
 
 if(global.floor_level == 1) instance_create_layer(640, 1150, "Player", oPlayer);
 if(global.floor_level == 2) instance_create_layer(640, 940, "Player", oPlayer);
-if(global.floor_level == 3) instance_create_layer(640, 1150, "Player", oPlayer);
+if(global.floor_level == 3) instance_create_layer(600, 900, "Player", oPlayer);
 if(global.floor_level == 4) instance_create_layer(640, 1000, "Player", oPlayer);
 
 window_set_fullscreen(1);

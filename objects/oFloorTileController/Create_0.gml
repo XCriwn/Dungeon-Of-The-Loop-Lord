@@ -16,7 +16,7 @@ tiles_y = room_height_px div tile_size;
 
 if(global.floor_level == 1) {createLevelOne(); setWall(); setKeyHole(); setDoor(); createEnemies("goblin", 10);}
 else if(global.floor_level == 2) {createLevelTwo(); setWall(); setKeyHole(); setDoor();}
-else if(global.floor_level == 3) {}
+else if(global.floor_level == 3) {createLevelThree(); setWall(); setKeyHole(); setDoor();}
 else if(global.floor_level == 4) {createLevelFour(); setWall(); }
 
 
@@ -78,7 +78,7 @@ function createLevelTwo(){
 	    for (var j = 0; j < tiles_y; j++) {
 	        global.tile_array[i][j] = 0;
 
-	        // Increased corridor dimensions
+	        
 	        var corridor_width = 9;
 	        var corridor_height = 7;
 
@@ -88,7 +88,7 @@ function createLevelTwo(){
 	        // Central horizontal corridor
 	        var inHorizontalMiddle = (j >= 10 && j < 10 + corridor_height) && (i >= 2 && i <= 35);
 
-	        // Central vertical corridor (connects horizontal corridors)
+	        // Central vertical corridor 
 	        var inCenterVertical = (i >= 18 && i < 18 + corridor_width) && (j >= 5 && j <= 30);
 
 	        // Top horizontal branch
@@ -103,19 +103,53 @@ function createLevelTwo(){
 	    }
 	}
 }
+
+function createLevelThree(){
+	global.tile_array = array_create(tiles_x);
+
+	for (var i = 0; i < tiles_x; i++) {
+	    global.tile_array[i] = array_create(tiles_y);
+	    for (var j = 0; j < tiles_y; j++) {
+	        global.tile_array[i][j] = 0;
+
+	        // TALLER ROOM & CORRIDOR REGIONS
+	        var inLeftRoom = (i >= 2 && i < 20) && (j >= 2 && j < 35);
+	        var inMiddleCorridor = (i >= 20 && i < 36) && (j >= 12 && j < 25);
+	        var inRightRoom = (i >= 36 && i < 52) && (j >= 2 && j < 35);
+
+	        // SHRUNKEN & CENTERED VOIDS
+	        var inTopLeftVoid = (i >= 7 && i < 12) && (j >= 6 && j < 11);
+	        var inBottomLeftVoid = (i >= 7 && i < 12) && (j >= 26 && j < 31);
+	        var inMiddleVoid = (i >= 27 && i < 30) && (j >= 16 && j < 21);
+	        var inRightVoid = (i >= 42 && i < 46) && (j >= 13 && j < 24);
+
+	        // FINAL TILE DECISION
+	        var inPlayableArea = 
+	            (inLeftRoom || inMiddleCorridor || inRightRoom)
+	            && !(inTopLeftVoid || inBottomLeftVoid || inMiddleVoid || inRightVoid);
+
+	        if (inPlayableArea) {
+	            global.tile_array[i][j] = randomiseTilelvl3();
+	        }
+	    }
+	}
+}
+
+
+
 	
 function createLevelFour() {
-    // Create 2D tile array
+ 
     global.tile_array = array_create(tiles_x);
 
     for (var i = 0; i < tiles_x; i++) {
         global.tile_array[i] = array_create(tiles_y);
         for (var j = 0; j < tiles_y; j++) {
-            // Fill solid ellipse with path/wall tiles
+         
             if (createEllipse(i, j, 16)) {
-                global.tile_array[i][j] = randomiseTilelvl3(); // Fill with path or wall
+                global.tile_array[i][j] = randomiseTilelvl3(); 
             } else {
-                global.tile_array[i][j] = 0; // Outside = void
+                global.tile_array[i][j] = 0; 
             }
         }
     }
