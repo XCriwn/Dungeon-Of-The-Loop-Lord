@@ -1,6 +1,6 @@
 HP = 50;
 
-damage = 10;
+damage = 7;
 
 shooting = false;
 
