@@ -40,6 +40,7 @@ if place_meeting(x,y, oPlayer){
 		}
 	if(global.floor_level == 3) {
 		room_goto(GameOver);
+		
 	}
 	global.floor_level++;
 	

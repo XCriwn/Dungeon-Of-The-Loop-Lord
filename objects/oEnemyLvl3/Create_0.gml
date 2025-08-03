@@ -1,10 +1,14 @@
-HP = 50;
+HP = 125;
 
-damage = 7;
+damage = 15;
 
 shooting = false;
 
 player_proximity = -1;
+
+attack_timer = 0;
+
+attack_done = false;
 
 can_move = true;
 
