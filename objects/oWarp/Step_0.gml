@@ -43,6 +43,6 @@ if place_meeting(x,y, oPlayer){
 	}
 	global.floor_level++;
 	
-	show_debug_message(global.floor_level)
+	//show_debug_message(global.floor_level)
 
 }

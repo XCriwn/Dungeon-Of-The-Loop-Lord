@@ -27,7 +27,7 @@ if(z_key and shooting == false) {
 	image_index = 0;
 }
 if(shooting){
-	show_debug_message("image index: " + string(image_index) + " sprite_index: " + string(sprite_index));
+	//show_debug_message("image index: " + string(image_index) + " sprite_index: " + string(sprite_index));
 	if(image_index == 3) {
 		var bullet = instance_create_layer(x, y,"Enemies", oBullet)
 	}

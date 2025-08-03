@@ -12,4 +12,4 @@ switch(facingDirectionBullet){
 
 speed = 4;
 
-show_debug_message("facing direction = " + string(facingDirectionBullet));
+//show_debug_message("facing direction = " + string(facingDirectionBullet));
