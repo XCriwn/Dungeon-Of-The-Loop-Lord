@@ -1,11 +1,15 @@
 // Destroy enemy if HP is 0
+
 if (HP <= 0) {
-	room_goto(RoomWin)
-	instance_destroy()
-	//instance_destroy(oGeneralController)
-	instance_destroy(oHUDController)
+	if(sprite_index != sBossTeleport) {sprite_index = sBossTeleport; image_speed = 1; image_index = 0;}
+	if(image_index >= image_number - 1) {
+		room_goto(RoomWin)
+		instance_destroy()
+		instance_destroy(oHUDController)
+	}
 	exit;
 }
+
 
 // Find player
 var player = instance_nearest(x, y, oPlayer);
