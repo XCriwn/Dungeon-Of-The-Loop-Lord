@@ -64,6 +64,7 @@
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},},
     {"id":{"name":"oWallTile","path":"objects/oWallTile/oWallTile.yy",},},
     {"id":{"name":"oWarp","path":"objects/oWarp/oWarp.yy",},},
+    {"id":{"name":"oWinController","path":"objects/oWinController/oWinController.yy",},},
     {"id":{"name":"GameOver","path":"rooms/GameOver/GameOver.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
@@ -123,6 +124,7 @@
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},},
     {"id":{"name":"sWallTile","path":"sprites/sWallTile/sWallTile.yy",},},
     {"id":{"name":"sWarp","path":"sprites/sWarp/sWarp.yy",},},
+    {"id":{"name":"sWin","path":"sprites/sWin/sWin.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
@@ -132,6 +134,7 @@
     {"roomId":{"name":"Room4","path":"rooms/Room4/Room4.yy",},},
     {"roomId":{"name":"GameOver","path":"rooms/GameOver/GameOver.yy",},},
     {"roomId":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},
+    {"roomId":{"name":"RoomWin","path":"rooms/RoomWin/RoomWin.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

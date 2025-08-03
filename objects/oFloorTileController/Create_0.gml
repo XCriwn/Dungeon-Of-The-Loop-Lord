@@ -139,6 +139,7 @@ function createLevelThree(){
 
 	
 function createLevelFour() {
+	alarm[0] = 3;
  
     global.tile_array = array_create(tiles_x);
 

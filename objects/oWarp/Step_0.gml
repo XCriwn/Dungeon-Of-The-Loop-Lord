@@ -35,8 +35,8 @@ if place_meeting(x,y, oPlayer){
 		
 	if(global.floor_level == 2) {
 		room_goto(Room3);
-		oPlayer.x = 640
-		oPlayer.y = 1150
+		oPlayer.x = 600
+		oPlayer.y = 900
 		}
 	if(global.floor_level == 3) {
 		room_goto(GameOver);
