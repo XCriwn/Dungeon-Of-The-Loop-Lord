@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"sndHihihiha",
+  "%Name":"sndLock",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.5934694,
-  "name":"sndHihihiha",
+  "duration":0.17086168,
+  "name":"sndLock",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndHihihiha.mp3",
+  "soundFile":"sndLock.mp3",
   "type":0,
-  "volume":0.09,
+  "volume":1.0,
 }

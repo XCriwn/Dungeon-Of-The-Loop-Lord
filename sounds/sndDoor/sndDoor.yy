@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":5.27093,
+  "duration":0.4670975,
   "name":"sndDoor",
   "parent":{
     "name":"Sounds",

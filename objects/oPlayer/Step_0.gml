@@ -30,6 +30,7 @@ if(shooting){
 	//show_debug_message("image index: " + string(image_index) + " sprite_index: " + string(sprite_index));
 	if(image_index == 3) {
 		var bullet = instance_create_layer(x, y,"Enemies", oBullet)
+		audio_play_sound(sndBullet, 1, false);
 	}
 	if(image_index >= 5) {
 		can_move = true;
