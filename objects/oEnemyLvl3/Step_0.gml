@@ -36,8 +36,8 @@ if (dist <= range) {
 
 // Movement
 if (!shooting && dist <= detect_range && dist > range && can_move) {
-    var move_x = lengthdir_x(1, angle);
-    var move_y = lengthdir_y(1, angle);
+    var move_x = lengthdir_x(0.5, angle);
+    var move_y = lengthdir_y(0.5, angle);
 
     // Wall collision check
     if (!place_meeting(x + move_x, y, oWall) and !place_meeting(x + move_x, y, oPlayer)  and !place_meeting(x + move_x, y, oEnemyLvl3)) {
