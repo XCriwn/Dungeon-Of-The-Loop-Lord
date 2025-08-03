@@ -17,7 +17,7 @@ tiles_y = room_height_px div tile_size;
 if(global.floor_level == 1) {createLevelOne(); setWall(); setKeyHole(); setDoor(); createEnemies("goblin", 10);}
 else if(global.floor_level == 2) {createLevelTwo(); setWall(); setKeyHole(); setDoor();}
 else if(global.floor_level == 3) {}
-else if(global.floor_level == 4) {createLevelFour(); setWall(); }
+else if(global.floor_level == 4) {createLevelFour(); setWall(); alarm[0]=1}
 
 
 setInstances()
