@@ -103,6 +103,7 @@
     {"id":{"name":"sEnemyGoblinRight","path":"sprites/sEnemyGoblinRight/sEnemyGoblinRight.yy",},},
     {"id":{"name":"sEnemyGoblinUp","path":"sprites/sEnemyGoblinUp/sEnemyGoblinUp.yy",},},
     {"id":{"name":"sFloorTile","path":"sprites/sFloorTile/sFloorTile.yy",},},
+    {"id":{"name":"sGameOver","path":"sprites/sGameOver/sGameOver.yy",},},
     {"id":{"name":"sHealthbar","path":"sprites/sHealthbar/sHealthbar.yy",},},
     {"id":{"name":"sKey","path":"sprites/sKey/sKey.yy",},},
     {"id":{"name":"sKeyHole","path":"sprites/sKeyHole/sKeyHole.yy",},},

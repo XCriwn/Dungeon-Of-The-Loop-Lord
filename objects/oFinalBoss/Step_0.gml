@@ -2,6 +2,8 @@
 if (HP <= 0) {
 	room_goto(RoomWin)
 	instance_destroy()
+	//instance_destroy(oGeneralController)
+	instance_destroy(oHUDController)
 	exit;
 }
 

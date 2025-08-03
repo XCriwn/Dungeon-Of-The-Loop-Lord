@@ -1,3 +1,6 @@
+if (instance_number(oGeneralController) > 2) {
+    instance_destroy()
+}
 
 randomize();
 
