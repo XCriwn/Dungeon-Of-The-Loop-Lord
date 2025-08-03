@@ -1,9 +1,9 @@
 
 randomize();
 
-global.floor_level = 4;
+global.floor_level = 1;
 
-room_goto(Room4);
+room_goto(Room1);
 
 if(global.floor_level == 1) instance_create_layer(640, 1150, "Player", oPlayer);
 if(global.floor_level == 2) instance_create_layer(640, 940, "Player", oPlayer);

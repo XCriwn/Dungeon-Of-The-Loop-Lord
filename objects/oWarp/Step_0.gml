@@ -29,12 +29,22 @@ if place_meeting(x,y, oPlayer){
 	
 	if (global.floor_level == 1) {
 		room_goto(Room2);
+		oPlayer.x = 640
+		oPlayer.y = 940
 		}
 		
 	if(global.floor_level == 2) {
-		room_goto(room3);
+		room_goto(Room3);
+		oPlayer.x = 640
+		oPlayer.y = 1150
 		}
-
+	if(global.floor_level == 3) {
+		room_goto(Room4);
+		oPlayer.x = 640
+		oPlayer.y = 1000;
+	}
 	global.floor_level++;
+	
+	show_debug_message(global.floor_level)
 
 }
