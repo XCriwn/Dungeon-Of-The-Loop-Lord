@@ -45,9 +45,18 @@ function randomiseTilelvl3(){
 	//returns 7,8,9
 	//1 is the base
 	random_var = irandom_range(1,10)
-	if (random_var <= 5) {return 7;}
-	if (random_var <= 8) {return 8;}
+	if (random_var <= 8) {return 7;}
+	if (random_var <= 9) {return 8;}
 	return 9;
+	
+}
+function randomiseTilelvl4(){
+	//returns 7,8,9
+	//1 is the base
+	random_var = irandom_range(1,10)
+	if (random_var <= 6) {return 8;}
+	if (random_var <= 8) {return 9;}
+	return 10;
 	
 }
 
@@ -148,7 +157,7 @@ function createLevelFour() {
         for (var j = 0; j < tiles_y; j++) {
          
             if (createEllipse(i, j, 16)) {
-                global.tile_array[i][j] = randomiseTilelvl3(); 
+                global.tile_array[i][j] = randomiseTilelvl4(); 
             } else {
                 global.tile_array[i][j] = 0; 
             }
@@ -348,6 +357,12 @@ for (var i = 0; i < tiles_x; i++) {
 				image_index = 0;
 			};   // keyhole 1
 			break;
+			case -10: 
+			var tile_2 = instance_create_layer(xx,yy,"Tiles", o3WallTile);
+			with tile_2{
+				image_index = 4;
+			};   // wall floor 3
+			break;
 			case -9: 
 			var tile_2 = instance_create_layer(xx,yy,"Tiles", o3WallTile);
 			with tile_2{
@@ -477,6 +492,12 @@ for (var i = 0; i < tiles_x; i++) {
 			with tile_1{
 				image_index = 3;
 			};   // floor 3
+			break;
+			case 10:
+			var tile_1 = instance_create_layer(xx,yy,"Tiles", o3FloorTile);
+			with tile_1{
+				image_index = 4;
+			};   // floor 4
 			break;
 
 			

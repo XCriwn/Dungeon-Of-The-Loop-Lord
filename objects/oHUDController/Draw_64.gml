@@ -1,4 +1,4 @@
-// ==== Draw Player HP ====
+//Hp 
 
 if(global.floor_level != 0){
 	draw_set_color(c_red);
@@ -11,7 +11,7 @@ if(global.floor_level != 0){
 
 	//COMMENT
 
-	// ==== Draw Inventory ====
+	//Inventory
 	var items = global.PlayerInventory;
 	var y_offset = 50;
 
