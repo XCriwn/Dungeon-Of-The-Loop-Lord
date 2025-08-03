@@ -16,6 +16,6 @@ dist = 999;
 
 angle = 0;
 
-range = 30;
+range = 60;
 
 detect_range = 300;

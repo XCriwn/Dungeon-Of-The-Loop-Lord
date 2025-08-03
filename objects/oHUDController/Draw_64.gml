@@ -1,6 +1,6 @@
 //Hp 
 
-if(global.floor_level != 0){
+if(global.floor_level != 0 and room != GameOver){
 	draw_set_color(c_red);
 	//draw_rectangle(20,20,180,50, 0)//(20, 20, "HP: " + string(global.PlayerHP));
 
