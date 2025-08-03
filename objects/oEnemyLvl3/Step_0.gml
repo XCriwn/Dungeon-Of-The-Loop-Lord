@@ -25,7 +25,7 @@ if (!shooting) {
     else sprite_index = Elvl3R;
 }
 
-// ====== PLAYER PROXIMITY ATTACK DIRECTION ======
+// Atack direction
 player_proximity = -1;
 if (dist <= range) {
     if (angle >= 45 && angle < 135) player_proximity = 1;   // Up
@@ -34,7 +34,7 @@ if (dist <= range) {
     else player_proximity = 0; // Right
 }
 
-// ====== MOVEMENT ======
+// Movement
 if (!shooting && dist <= detect_range && dist > range && can_move) {
     var move_x = lengthdir_x(1, angle);
     var move_y = lengthdir_y(1, angle);
@@ -49,7 +49,7 @@ if (!shooting && dist <= detect_range && dist > range && can_move) {
     }
 }
 
-// ====== ATTACKING / PUNCHING ANIMATION ======
+//Attacking animation
 if (player_proximity >= 0 && !shooting) {
     shooting = true;
     can_move = false;

@@ -18,14 +18,14 @@ var dist = point_distance(x, y, player.x, player.y);
 var angle = point_direction(x, y, player.x, player.y);
 
 // Update sprite based on angle (when not attacking)
-if (!shooting and !final_attack) {
+if (!shooting) {
     if (angle >= 45 && angle < 135) sprite_index = sBossWalkBack;
     else if (angle >= 135 && angle < 225) sprite_index = sBossWalkLeft;
     else if (angle >= 225 && angle < 315) sprite_index = sBossWalkFront;
     else sprite_index = sBossWalkRight;
 }
 
-// ====== PLAYER PROXIMITY ATTACK DIRECTION ======
+// Atack direction
 player_proximity = -1;
 if (dist <= range) {
     if (angle >= 45 && angle < 135) player_proximity = 1;   // Up
@@ -34,8 +34,8 @@ if (dist <= range) {
     else player_proximity = 0; // Right
 }
 
-// ====== MOVEMENT ======
-if (!shooting and !final_attack && dist <= detect_range && dist > range && can_move) {
+// Movement
+if (!shooting && dist <= detect_range && dist > range && can_move) {
     var move_x = lengthdir_x(1, angle);
     var move_y = lengthdir_y(1, angle);
 
@@ -49,8 +49,8 @@ if (!shooting and !final_attack && dist <= detect_range && dist > range && can_m
     }
 }
 
-// ====== ATTACKING / PUNCHING ANIMATION ======
-if (player_proximity >= 0 && !shooting and !final_attack) {
+//Attacking animation
+if (player_proximity >= 0 && !shooting) {
     shooting = true;
     can_move = false;
     
@@ -80,43 +80,3 @@ if (shooting) {
         image_speed = 1;
     }
 }
-
-if(final_attack_cooldown == 0){
-	final_attack = true;
-	 can_move = false;
-	 
-	 switch (player_proximity) {
-        case 1: sprite_index = sBossChargeAttackBack; break;
-        default: sprite_index = sBossChargeAttackFront; break;
-    }
-	image_speed = 1;
-    image_index = 0;
-	final_attack_cooldown--;
-	
-}else final_attack_cooldown--;
-
-if(final_attack) {
-
-	if (image_index == 6 or image_index == 8 or image_index == 10 or image_index == 12) {
-        //commence final attack bossbullet spawning
-		for(var i=0; i<=7; i++){
-		
-		var bb = instance_create_layer(x,y,"Enemies", oBossBullet);
-		bb.facingDirectionBullet = i;
-		
-		}
-    }
-
-// Reset after animation ends
-    if (image_index >= image_number - 1) {
-        final_attack = false;
-		final_attack_cooldown = final_attack_max_cooldown;
-		final_attack_max_cooldown += 60;
-        can_move = true;
-        player_proximity = -1;
-        image_index = 0;
-        image_speed = 1;
-    }
-}
-
-
